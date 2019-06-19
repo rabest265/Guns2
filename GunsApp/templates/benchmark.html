@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--  CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <title>Gun Violence in the United States</title>
+  </head>
+  <body class="d-flex flex-column">
+        <div id="page-content">
+        
+                <nav class="navbar navbar-expand-lg navbar-blue">
+                        <a class="navbar-brand mb-0 h1" href="/">HOME</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Charts
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/interactive_chart">Interactive Chart</a>
+                                <a class="dropdown-item" href="/maps">Map</a>
+                                <a class="dropdown-item" href="/benchmark">Benchmark</a>        
+                              </div>
+                            </li>
+                        </ul>
+                    </div>
+                  </nav>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box">
+                            <h1>Comparing State Gun Laws</h1>
+                            <p>Select from dropdowns to see how laws compare to the national benchmark</p>
+                              
+                              <select class="filterdown" id="longgun">
+                                  <option value="*" selected="selected">Is there an age restriction?</option>
+                                  <option value="*">All</option>
+                                  <option value= 1 >Must be 18 to own a long gun</option>
+                                  <option value= 0 >No law on age to own a long gun</option>
+                              </select>
+                              <select class="filterdown" id="assault">
+                                  <option value="*" selected="selected">Is there a Ban on Assault Weapons?</option>
+                                  <option value="*">All</option>
+                                  <option value= 1 >There is a ban on assualt weapons</option>
+                                  <option value= 0 >There is no ban on assualt weapons</option>
+                              </select>
+
+                              <select class="filterdown" id="mental">
+                                  <option value="*" selected="selected">Do background checks look at mental health records?</option>
+                                  <option value="*">All</option>
+                                  <option value= 1 >Background checks look at mental health</option>
+                                  <option value= 0 >Background checks do not explicitly check mental health</option>
+                              </select>
+
+                              <select class="filterdown" id="universal">
+                                  <option value="*" selected="selected">Are universal background checks required?</option>
+                                  <option value="*">All</option>
+                                  <option value= 1 >Universal background checks required for all purchases</option>
+                                  <option value= 0 >Universal background checks are not required</option>
+                              </select>
+
+                              <div id="chartContainer" style="height: 36px; width: 100%;"></div>
+
+
+
+
+
+                            
+                            <div id="plot"></div>
+                            <!--  chart here. -->
+                            <!-- <script src="../static/js/bar.js"></script> -->
+                            <div class="clear">&nbsp;<br></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end #page-content -->
+
+        <!-- Footer -->
+        
+        <footer id="sticky-footer" class="py-4 text-white-50">
+            <div class="container text-center">
+                <small>Gun Incident data from <a href='https://openweathermap.org/'>Kaggle</a> accessed 06/07/2019</small>
+            </div>
+        </footer>
+
+        
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	  
+	  <!-- leaflet, d3 -->
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script type="text/javascript" src="https://leafletjs.com/examples/choropleth/us-states.js"></script>
+      
+    <script type="text/javascript" src="/static/js/config.js"></script>
+
+    <!-- Marker Cluster JS & CSS -->
+    <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/js/bar.js"></script>
+    
+  </body>
+</html>

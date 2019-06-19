@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700|Roboto:300');
+
+
+html, body{
+    background-color:#ededed;
+    height:100%;
+    font-family: 'Roboto', sans-serif;
+    color:#111;
+}
+
+p{
+    font-size:.9rem;
+}
+
+
+
+.navbar{
+    background-color:#1e8e8e;
+	background-color:#000;
+}
+
+.navbar-collapse.collapse.show{
+    padding-left:1em;
+    padding-right:1em;
+    margin-right:-1em;
+    margin-left:-1em;
+    background-color:#343a40;
+}
+
+
+h1, h2{
+    font-family: 'Merriweather', serif;
+    color:#0d4a96;
+    border-bottom:1px #c4c4c4 solid;
+}
+.dropdown-menu{
+    left:auto;
+    right:0;
+}
+h1{
+    font-size:1.8rem;
+    padding-bottom:1.2rem;
+    margin-bottom:1.2rem;
+}
+
+h2{
+    font-size:1.3rem;
+    padding-bottom:1rem;
+    margin-bottom:1rem;
+}
+h3{
+    font-family: 'Merriweather', serif;
+    color:#1e8e8e;
+    font-size:1.1rem;
+    margin-top:1rem;
+    padding-bottom:0;
+    margin-bottom:0;
+}
+
+
+
+
+.jumbotron{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	background:url("../images/gun_banner.jpg") center center no-repeat;
+	background-size:cover;
+	margin:0;
+	height:240px;
+	color:#fff;
+}
+
+p.lead{
+	text-align:center;
+	margin:0 20px;
+	font-style:italic;
+}
+
+.box{
+    padding: 30px;
+    background-color: #fff;
+    margin-bottom:20px;
+}
+a{
+    text-decoration:none;
+    color:#d97240;
+}
+
+a:hover, .dropdown-item:hover{
+    color:#d94733;
+}
+
+.dropdown-item:active{
+    color:#fff;
+    background-color:#d97240;
+}
+
+.dropdown-item.active{
+    color:#fff;
+    background-color:#1e8e8e; 
+}
+.navbar-dark .navbar-brand,
+a.navbar-brand{
+	color:#df603f;
+}
+
+a.viscard, a.compcard{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    color:#111;
+    margin:8px -14px;
+    padding:8px 0;
+    box-sizing:border-box;
+}
+
+.box .containter{
+    padding:0;
+    margin:0;
+}
+
+
+#page-content {
+    flex: 1 0 auto;
+}
+  
+#sticky-footer {
+    flex-shrink: none;
+	background:#000;
+}
+
+ul.yearbtns{
+    list-style: none;
+    text-align:center;
+    width:auto;
+    margin:10px 0;
+    padding:0;
+}
+
+ul.yearbtns li{
+    display:inline-block;
+    padding:4px 20px;
+    background:#dddada;
+    border-radius:3px;
+    cursor:pointer;
+}
+
+ul.yearbtns li.mactive{
+    background:#757574;
+    color:white;
+}
+
+div.mapstat{
+    text-align:center;
+    font-size: .9rem;
+    margin-bottom:.5rem;
+}
+.clear{
+    clear:both;
+}
+/*-----------------*/
+#map{
+	width:100%;
+  height: 540px;
+}	
+
+.info {
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.info h4 {
+  margin: 0 0 5px;
+  color: #777;
+  font-size:1rem;
+}
+
+.legend {
+  line-height: 18px;
+  color: #555;
+}
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+.leaflet-popup-content h3{
+    color:#d94733;
+	font-size:1rem;
+    border-bottom:#999 1px solid;
+    text-align:center;
+    padding-bottom:.2rem;
+    margin-bottom:.2rem;
+}
+.leaflet-popup-content h3 span{
+    color:black;
+}
+
+
+/*----------scatter -----------*/
+#scatter{
+    width:100%;
+    height:500px;
+}
+
+.aText {
+    font-family: sans-serif;
+    font-size: 16px;
+    text-anchor: middle;
+  }
+  
+  .active {
+    font-weight: bold;
+    fill: #000;
+    transition: fill 0.3s ease-out;
+    text-anchor: middle;
+  }
+  
+  .inactive {
+    font-weight: lighter;
+    fill: #c9c9c9;
+    transition: fill 0.3s ease-out;
+    text-anchor: middle;
+  }
+  
+  .inactive:hover {
+    fill: #000;
+    cursor: pointer;
+  }
+  
+  /* font size dependent on radius, see app.js */
+  .stateText {
+    font-family: sans-serif;
+    fill: #fff;
+    text-anchor: middle;
+  }
+  
+  .stateCircle {
+    fill: #89bdd3;
+    stroke: #e3e3e3;
+  }
+  
+  .chart {
+    display: block;
+    margin: 0;
+  }
+  
+  .d3-tip {
+    padding: 6px;
+    font-size: 12px;
+    line-height: 1;
+    line-height: 1.5em;
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+  }
+  
+
+
+
+
+
+
+
+
+
+table{
+    font-size:.8rem;
+}
+table thead th{
+    background-color:#343a40;
+    color:#fff;
+    cursor:pointer;
+}
+table thead th.active{
+    color:#ff9764;
+}
+
+table thead th.active.up::after{
+    content:" \25B2";
+    color:#ff9764;
+}
+
+table thead th.active.down::after{
+    content:" \25BC";
+    color:#ff9764;
+}
+table tbody tr{
+    cursor:pointer;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    .navbar{
+		background-color:#000;
+    }
+
+    a.navbar-brand{
+        padding-left:1rem;
+        padding-right:1rem;
+    }
+    
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    a.navbar-brand{
+        margin-left:2rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}
+
+.bubbles {
+  opacity: .50
+ }
+.bubbles:hover {
+  stroke: rgb(241, 7, 7);
+  opacity: .95
+}
+ 
+.tooltip {
+  padding: 6px;
+  font-size: 12px;
+  line-height: 1;
+  line-height: 1.5em;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
