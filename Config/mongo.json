@@ -1,0 +1,14 @@
+
+{
+    "development":{
+        "database": "demo_exploring_mongoose_deployment",
+        "host": "localhost"
+    },
+    "test": {
+        "database": "demo_exploring_mongoose_test",
+        "host": "localhost"
+    },
+    "production":{
+        "use_env_variable": "MONGODB_URI"
+    }
+}
